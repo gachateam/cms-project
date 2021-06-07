@@ -1,0 +1,16 @@
+/*!
+Theme Name:   my_theme
+Theme URI:    http://wordpress.prj/
+Author:       Automattic
+Author URI:   http://wordpress.prj/
+Description:  theme
+Version:      1.0
+Tested up to: 5.7.0
+Requires PHP: 5.6.0
+License:      GNU General Public License v3 or later
+Text Domain:  storefront
+*/
+
+.test{
+    background-color: red;
+}
