@@ -12,6 +12,3 @@
 </head>
 
 <body>
-    <div class="test-scss">
-        123asfd
-    </div>

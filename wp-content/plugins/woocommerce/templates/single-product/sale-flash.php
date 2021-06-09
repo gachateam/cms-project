@@ -20,11 +20,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $post, $product;
-
+$persent = (($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100;
 ?>
 <?php if ( $product->is_on_sale() ) : ?>
 
-	<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $product ); ?>
+	<?php echo apply_filters( 'woocommerce_sale_flash', '<span class="onsale">-' . $persent . '%</span>', $post, $product ); ?>
 
 	<?php
 endif;
