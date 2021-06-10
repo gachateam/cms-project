@@ -53,3 +53,5 @@ var owl3 = $("#owl-example3")
 owl3.owlCarousel(option);
 var owl4 = $("#owl-example4")
 owl4.owlCarousel(option);
+var owl5 = $("#owl-example5")
+owl5.owlCarousel(option);

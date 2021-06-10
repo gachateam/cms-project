@@ -23,6 +23,9 @@ if (!function_exists('wpbootstrap_enqueue_styles')) {
 
 add_action('wp_enqueue_scripts', 'wpbootstrap_enqueue_styles');
 
+require 'inc/mytheme-funtion.php';
+require 'inc/mytheme-hook.php';
+
 add_action('wp_ajax_open_modal', 'open_model_func');
 add_action('wp_ajax_nopriv_open_modal', 'open_model_func');
 

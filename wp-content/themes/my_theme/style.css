@@ -468,3 +468,191 @@ span.onsale {
   color: #808080;
   text-decoration: none;
 }
+
+.about-cms .text1 {
+  color: #000000;
+  display: block;
+  font-family: raleway;
+  font-size: 45px;
+  font-style: italic;
+  font-weight: 600;
+  line-height: 45px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+.about-cms {
+  padding-top: 64px !important;
+  padding-bottom: 24px !important;
+}
+
+.about-cms .text1:after {
+  background: rgba(0, 0, 0, 0) url("img/offer.jpg") no-repeat scroll center 0;
+  content: "";
+  height: 86px;
+  position: absolute;
+  width: 119px;
+}
+
+.about-cms .text2 {
+  color: #7d7d7d;
+  font-family: raleway;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+  display: block;
+  margin: 26px 0 28px;
+}
+
+.about-cms .text2:before {
+  background: rgba(0, 0, 0, 0) url("img/divider.jpg") no-repeat scroll center 0;
+  height: 11px;
+  width: 161px;
+  content: "";
+  display: block;
+  top: -28px;
+  position: relative;
+}
+
+.link-text {
+  background: #ffffff;
+  box-shadow: 2px 2px 4px rgb(0 0 0 / 9%);
+  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: 2px 2px 4px rgb(0 0 0 / 9%);
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 14px 23px;
+  text-transform: uppercase;
+}
+.about-cms .static-wrapper .shop-now {
+  position: relative;
+  text-align: left;
+  display: block;
+}
+
+.static-wrapper .shop-now {
+  position: absolute;
+  text-align: center;
+  z-index: 5;
+}
+
+.about-cms:hover .link-text {
+  background-color: #000000;
+  border-color: #000000;
+  color: #ffffff;
+  transition: all 0.5s;
+}
+
+.about-cms:hover .vc_single_image-img {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+.post-image {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.post-block-inner {
+  height: 245px;
+  width: 100%;
+}
+
+.post-block-inner .post-detail {
+  background: rgba(0, 0, 0, 0.75) none repeat scroll 0 0;
+  bottom: -130px;
+  padding: 15px;
+  position: absolute;
+  opacity: 0;
+  transition-duration: 500ms;
+}
+
+.post-block-inner:hover .post-detail {
+  opacity: 1;
+  bottom: 0;
+}
+
+.post-block-inner .post-title a {
+  color: #fff;
+  font-size: 14px;
+  line-height: 25px;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 0.6px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.post-description {
+  font-family: raleway;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.9px;
+  line-height: 20px;
+}
+
+.post-block-inner .post-description {
+  color: #fff;
+}
+
+.post-detail {
+  text-align: center;
+  width: 100%;
+}
+
+.post-block-inner .date-hover {
+  bottom: 0;
+  color: #ffffff;
+  float: right;
+  position: relative;
+  right: 10px;
+  top: -30px;
+  width: auto;
+}
+
+.post-block-inner:hover .date-hover {
+  display: none;
+}
+
+.post-block-inner .date-time {
+  background: #ffffff none repeat scroll 0 0;
+  border: 5px solid #ffffff;
+  color: #000000;
+  display: inline-block;
+  float: none;
+  font-family: titillium web;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 400;
+  margin: -13px -1px 0;
+  padding: 0 3px;
+  text-align: center;
+  text-transform: capitalize;
+  width: auto;
+}
+
+.post-block-inner .date-time .show-date {
+  float: left;
+  width: 100%;
+}
+
+.shortcode-title {
+  margin: 0;
+  padding: 0 0 30px;
+  width: 100%;
+}
+.normal-title {
+  color: #000000;
+  display: inline-block;
+  font-size: 40px;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 30px 0 0;
+  position: relative;
+  text-transform: capitalize;
+  vertical-align: top;
+  width: auto;
+  font-style: italic;
+}

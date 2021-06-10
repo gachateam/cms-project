@@ -1,4 +1,15 @@
-<?php global $product_categories; ?>
+<?php
+$orderby = 'count';
+$order = 'desc';
+$cat_args = array(
+    'orderby'    => $orderby,
+    'order'      => $order,
+    'hide_empty' => 0,
+    'number' => 3,
+);
+
+$product_categories = get_terms('product_cat', $cat_args);
+?>
 <div class="container mt-5">
     <div class="row">
         <?php
