@@ -36,7 +36,7 @@ global $product;
         }
         echo '<div class="rating">' . wc_get_rating_html($product->get_average_rating()) . '</div>';
         ?>
-        
+
         <div class="product-name text-center">
             <?php echo $product->name ?>
         </div>

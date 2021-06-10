@@ -656,3 +656,7 @@ span.onsale {
   width: auto;
   font-style: italic;
 }
+
+#owl-example5:hover .nav-button{
+  opacity: 1;
+}
