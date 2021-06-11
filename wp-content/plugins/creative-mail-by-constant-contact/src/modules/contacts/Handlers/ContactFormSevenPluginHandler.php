@@ -11,6 +11,9 @@ use CreativeMail\Modules\Contacts\Models\OptActionBy;
 
 class ContactFormSevenPluginHandler extends BaseContactFormPluginHandler
 {
+    private $firstnameFields = array('firstname', 'first_name', 'name', 'your-name');
+    private $lastnameFields = array('lastname', 'last_name');
+
     private function findValue($data, $fieldOptions)
     {
         foreach ($fieldOptions as $fieldOption) {
@@ -61,7 +64,7 @@ class ContactFormSevenPluginHandler extends BaseContactFormPluginHandler
         }
         $birthday = $this->findValue($contactForm, $this->birthdayFields);
         if (!empty($birthday)) {
-            $contactModel->setBirthday($birthday);
+            $contactModel->set_birthday($birthday);
         }
 
         $contactModel->setOptIn(false);
@@ -131,7 +134,7 @@ class ContactFormSevenPluginHandler extends BaseContactFormPluginHandler
                     }
                     $birthday = $this->findValueFromDb($form_data, $this->birthdayFields);
                     if (!empty($birthday)) {
-                        $contactModel->setBirthday($birthday);
+                        $contactModel->set_birthday($birthday);
                     }
                 } catch (\Exception $exception) {
                     RaygunManager::get_instance()->exception_handler($exception);

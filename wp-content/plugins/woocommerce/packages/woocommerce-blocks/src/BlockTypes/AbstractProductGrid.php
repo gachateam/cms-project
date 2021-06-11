@@ -393,7 +393,16 @@ abstract class AbstractProductGrid extends AbstractDynamicBlock {
 		if ( empty( $this->attributes['contentVisibility']['title'] ) ) {
 			return '';
 		}
-		return '<div class="wc-block-grid__product-title">' . wp_kses_post( $product->get_title() ) . '</div>';
+                
+                
+		
+                if($product->get_stock_quantity() == 0){
+					 return '<div class="wc-block-grid__product-title">' . wp_kses_post( $product->get_title() ) . '</div><br>'.'Out Of Stock'.'<br>';
+                  
+                }
+                    return '<div class="wc-block-grid__product-title">' . wp_kses_post( $product->get_title() ) . '</div><br>'.'Amount Left:'.$product->get_stock_quantity().'<br>';
+                
+		
 	}
 
 	/**

@@ -19,7 +19,7 @@ use SkyVerge\WooCommerce\Facebook\API;
  *
  * @since 2.0.0
  */
-class Response extends API\Response {
+class Response extends API\Response  {
 
 
 	/**
@@ -130,7 +130,7 @@ class Response extends API\Response {
 	 */
 	public function get_profiles() {
 
-		return ! empty( $this->get_data()->profiles ) ? $this->get_data()->profiles : array();
+		return ! empty( $this->get_data()->profiles ) ? $this->get_data()->profiles : [];
 	}
 
 
@@ -143,7 +143,7 @@ class Response extends API\Response {
 	 */
 	public function get_data() {
 
-		$data = ! empty( $this->response_data->data ) && is_array( $this->response_data->data ) ? $this->response_data->data : array();
+		$data = ! empty( $this->response_data->data ) && is_array( $this->response_data->data ) ? $this->response_data->data : [];
 
 		return is_object( $data[0] ) ? $data[0] : new \stdClass();
 	}

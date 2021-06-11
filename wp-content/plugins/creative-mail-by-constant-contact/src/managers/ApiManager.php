@@ -193,7 +193,7 @@ class ApiManager
                     $active_plugins = apply_filters('active_plugins', get_option('active_plugins'));
                     if (in_array('woocommerce/woocommerce.php', $active_plugins)) {
                         $page = 1;
-                        if (property_exists($request,'page')) {
+                        if (key_exists('page', $request)) {
                             $page = (int)$request['page'];
                         }
 
@@ -231,7 +231,7 @@ class ApiManager
                 self::ROUTE_CALLBACK          => function ($request) {
 
                     $page = 1;
-                    if (property_exists($request,'page')) {
+                    if (key_exists('page', $request)) {
                         $page = (int)$request['page'];
                     }
 

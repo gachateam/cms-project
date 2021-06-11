@@ -88,7 +88,7 @@ class CalderaPluginHandler extends BaseContactFormPluginHandler
             $contactModel->setPhone($contact->phone);
         }
         if (!empty($contact->birthday)) {
-            $contactModel->setBirthday($contact->birthday);
+            $contactModel->set_birthday($contact->birthday);
         }
 
         return $contactModel;

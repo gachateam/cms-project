@@ -33,7 +33,7 @@ trait Rate_Limited_Response {
 	 */
 	private function get_usage_data( $headers ) {
 
-		$usage_data = array();
+		$usage_data = [];
 
 		if ( ! empty( $headers['X-Business-Use-Case-Usage'] ) ) {
 

@@ -17,7 +17,7 @@ defined( 'ABSPATH' ) or exit;
  *
  * @since 2.1.0
  */
-class Request extends Abstract_Request {
+class Request extends Abstract_Request  {
 
 
 	/**
@@ -43,13 +43,13 @@ class Request extends Abstract_Request {
 	 * @since 2.1.0
 	 *
 	 * @param string $page_id page ID
-	 * @param array  $args optional additional arguments
+	 * @param array $args optional additional arguments
 	 */
-	public function __construct( $page_id, $args = array() ) {
+	public function __construct( $page_id, $args = [] ) {
 
 		parent::__construct( "/{$page_id}/commerce_orders", 'GET' );
 
-		$params = array();
+		$params = [];
 
 		if ( isset( $args['updated_before'] ) ) {
 
@@ -78,23 +78,20 @@ class Request extends Abstract_Request {
 		} else {
 
 			// request all top-level fields
-			$params['fields'] = implode(
-				',',
-				array(
-					'id',
-					'order_status',
-					'created',
-					'last_updated',
-					'items{id,retailer_id,product_id,quantity,price_per_unit,tax_details}',
-					'ship_by_date',
-					'merchant_order_id',
-					'channel',
-					'selected_shipping_option',
-					'shipping_address',
-					'estimated_payment_details',
-					'buyer_details',
-				)
-			);
+			$params['fields'] = implode( ',', [
+				'id',
+				'order_status',
+				'created',
+				'last_updated',
+				'items{id,retailer_id,product_id,quantity,price_per_unit,tax_details}',
+				'ship_by_date',
+				'merchant_order_id',
+				'channel',
+				'selected_shipping_option',
+				'shipping_address',
+				'estimated_payment_details',
+				'buyer_details',
+			] );
 		}
 
 		$this->set_params( $params );

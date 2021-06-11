@@ -54,13 +54,13 @@ class Feed {
 	private function add_hooks() {
 
 		// schedule the recurring feed generation
-		add_action( 'admin_init', array( $this, 'schedule_feed_generation' ) );
+		add_action( 'init', [ $this, 'schedule_feed_generation' ] );
 
 		// regenerate the product feed
-		add_action( self::GENERATE_FEED_ACTION, array( $this, 'regenerate_feed' ) );
+		add_action( self::GENERATE_FEED_ACTION, [ $this, 'regenerate_feed' ] );
 
 		// handle the feed data request
-		add_action( 'woocommerce_api_' . self::REQUEST_FEED_ACTION, array( $this, 'handle_feed_data_request' ) );
+		add_action( 'woocommerce_api_' . self::REQUEST_FEED_ACTION, [ $this, 'handle_feed_data_request' ] );
 	}
 
 
@@ -86,7 +86,7 @@ class Feed {
 		try {
 
 			// bail early if the feed secret is not included or is not valid
-			if ( self::get_feed_secret() !== Framework\SV_WC_Helper::get_requested_value( 'secret' ) ) {
+			if ( Feed::get_feed_secret() !== Framework\SV_WC_Helper::get_requested_value( 'secret' ) ) {
 				throw new Framework\SV_WC_Plugin_Exception( 'Invalid feed secret provided.', 401 );
 			}
 
@@ -102,7 +102,7 @@ class Feed {
 			header( 'Expires: 0' );
 			header( 'Cache-Control: must-revalidate, post-check=0, pre-check=0' );
 			header( 'Pragma: public' );
-			header( 'Content-Length:' . filesize( $file_path ) );
+			header( 'Content-Length:'. filesize( $file_path ) );
 
 			$file = @fopen( $file_path, 'rb' );
 
@@ -123,6 +123,7 @@ class Feed {
 
 				echo $contents;
 			}
+
 		} catch ( \Exception $exception ) {
 
 			\WC_Facebookcommerce_Utils::log( 'Could not serve product feed. ' . $exception->getMessage() . ' (' . $exception->getCode() . ')' );
@@ -157,14 +158,11 @@ class Feed {
 	 * @since 1.11.0
 	 */
 	public function schedule_feed_generation() {
-		$integration   = facebook_for_woocommerce()->get_integration();
-		$configured_ok = $integration && $integration->is_configured();
 
-		// Only schedule feed job if store has not opted out of product sync.
-		$store_allows_sync = $configured_ok && $integration->is_product_sync_enabled();
-		// Only schedule if has not opted out of feed generation (e.g. large stores).
-		$store_allows_feed = $configured_ok && $integration->is_legacy_feed_file_generation_enabled();
-		if ( ! $store_allows_sync || ! $store_allows_feed ) {
+		$integration = facebook_for_woocommerce()->get_integration();
+
+		// only schedule if configured
+		if ( ! $integration || ! $integration->is_configured() || ! $integration->is_product_sync_enabled() ) {
 			as_unschedule_all_actions( self::GENERATE_FEED_ACTION );
 			return;
 		}
@@ -173,14 +171,13 @@ class Feed {
 		 * Filters the frequency with which the product feed data is generated.
 		 *
 		 * @since 1.11.0
-		 * @since 2.5.0 Feed generation interval increased to 24h.
 		 *
 		 * @param int $interval the frequency with which the product feed data is generated, in seconds. Defaults to every 15 minutes.
 		 */
-		$interval = apply_filters( 'wc_facebook_feed_generation_interval', DAY_IN_SECONDS );
+		$interval = apply_filters( 'wc_facebook_feed_generation_interval', MINUTE_IN_SECONDS * 15 );
 
 		if ( ! as_next_scheduled_action( self::GENERATE_FEED_ACTION ) ) {
-			as_schedule_recurring_action( time(), max( 2, $interval ), self::GENERATE_FEED_ACTION, array(), facebook_for_woocommerce()->get_id_dasherized() );
+			as_schedule_recurring_action( time(), max( 2, $interval ), self::GENERATE_FEED_ACTION, [], facebook_for_woocommerce()->get_id_dasherized() );
 		}
 	}
 
@@ -218,10 +215,10 @@ class Feed {
 	 */
 	public static function get_feed_data_url() {
 
-		$query_args = array(
+		$query_args = [
 			'wc-api' => self::REQUEST_FEED_ACTION,
 			'secret' => self::get_feed_secret(),
-		);
+		];
 
 		return add_query_arg( $query_args, home_url( '/' ) );
 	}
@@ -240,7 +237,7 @@ class Feed {
 
 		$secret = get_option( self::OPTION_FEED_URL_SECRET, '' );
 
-		if ( ! $secret ) {
+		if  ( ! $secret ) {
 
 			$secret = wp_hash( 'products-feed-' . time() );
 

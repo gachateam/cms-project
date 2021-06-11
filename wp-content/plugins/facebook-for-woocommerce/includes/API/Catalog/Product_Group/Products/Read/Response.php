@@ -34,7 +34,7 @@ class Response extends API\Response {
 	 */
 	public function get_ids() {
 
-		$product_item_ids = array();
+		$product_item_ids = [];
 
 		foreach ( $this->get_data() as $entry ) {
 			$product_item_ids[ $entry->retailer_id ] = $entry->id;

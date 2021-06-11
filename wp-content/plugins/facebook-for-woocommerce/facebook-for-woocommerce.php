@@ -10,16 +10,15 @@
  * Description: Grow your business on Facebook! Use this official plugin to help sell more of your products using Facebook. After completing the setup, you'll be ready to create ads that promote your products and you can also create a shop section on your Page where customers can browse your products on Facebook.
  * Author: Facebook
  * Author URI: https://www.facebook.com/
- * Version: 2.5.1
+ * Version: 2.4.0
  * Text Domain: facebook-for-woocommerce
  * WC requires at least: 3.5.0
  * WC tested up to: 5.2.2
- * Requires PHP: 7.0
  *
  * @package FacebookCommerce
  */
 
-defined( 'ABSPATH' ) || exit;
+defined( 'ABSPATH' ) or exit;
 
 /**
  * The plugin loader class.
@@ -28,39 +27,27 @@ defined( 'ABSPATH' ) || exit;
  */
 class WC_Facebook_Loader {
 
-	/**
-	 * @var string the plugin version. This must be in the main plugin file to be automatically bumped by Woorelease.
-	 */
-	const PLUGIN_VERSION = '2.5.1'; // WRCS: DEFINED_VERSION.
 
-	// Minimum PHP version required by this plugin.
-	const MINIMUM_PHP_VERSION = '7.0.0';
+	/** minimum PHP version required by this plugin */
+	const MINIMUM_PHP_VERSION = '5.6.0';
 
-	// Minimum WordPress version required by this plugin.
+	/** minimum WordPress version required by this plugin */
 	const MINIMUM_WP_VERSION = '4.4';
 
-	// Minimum WooCommerce version required by this plugin.
+	/** minimum WooCommerce version required by this plugin */
 	const MINIMUM_WC_VERSION = '3.5.0';
 
-	// SkyVerge plugin framework version used by this plugin.
+	/** SkyVerge plugin framework version used by this plugin */
 	const FRAMEWORK_VERSION = '5.10.0';
 
-	// The plugin name, for displaying notices.
+	/** the plugin name, for displaying notices */
 	const PLUGIN_NAME = 'Facebook for WooCommerce';
 
 
-	/**
-	 * This class instance.
-	 *
-	 * @var \WC_Facebook_Loader single instance of this class.
-	 */
+	/** @var \WC_Facebook_Loader single instance of this class */
 	private static $instance;
 
-	/**
-	 * Admin notices to add.
-	 *
-	 * @var array Array of admin notices.
-	 */
+	/** @var array the admin notices to add */
 	private $notices = array();
 
 
@@ -78,7 +65,7 @@ class WC_Facebook_Loader {
 
 		add_action( 'admin_notices', array( $this, 'admin_notices' ), 15 );
 
-		// If the environment check fails, initialize the plugin.
+		// if the environment check fails, initialize the plugin
 		if ( $this->is_environment_compatible() ) {
 			add_action( 'plugins_loaded', array( $this, 'init_plugin' ) );
 		}
@@ -120,7 +107,7 @@ class WC_Facebook_Loader {
 
 		$this->load_framework();
 
-		require_once plugin_dir_path( __FILE__ ) . 'class-wc-facebookcommerce.php';
+		require_once( plugin_dir_path( __FILE__ ) . 'class-wc-facebookcommerce.php' );
 
 		// fire it up!
 		if ( function_exists( 'facebook_for_woocommerce' ) ) {
@@ -137,7 +124,7 @@ class WC_Facebook_Loader {
 	private function load_framework() {
 
 		if ( ! class_exists( '\\SkyVerge\\WooCommerce\\PluginFramework\\' . $this->get_framework_version_namespace() . '\\SV_WC_Plugin' ) ) {
-			require_once plugin_dir_path( __FILE__ ) . 'vendor/skyverge/wc-plugin-framework/woocommerce/class-sv-wc-plugin.php';
+			require_once( plugin_dir_path( __FILE__ ) . 'vendor/skyverge/wc-plugin-framework/woocommerce/class-sv-wc-plugin.php' );
 		}
 	}
 
@@ -217,34 +204,23 @@ class WC_Facebook_Loader {
 
 		if ( ! $this->is_wp_compatible() ) {
 
-			$this->add_admin_notice(
-				'update_wordpress',
-				'error',
-				sprintf(
-					'%s requires WordPress version %s or higher. Please %supdate WordPress &raquo;%s',
-					'<strong>' . self::PLUGIN_NAME . '</strong>',
-					self::MINIMUM_WP_VERSION,
-					'<a href="' . esc_url( admin_url( 'update-core.php' ) ) . '">',
-					'</a>'
-				)
-			);
+			$this->add_admin_notice( 'update_wordpress', 'error', sprintf(
+				'%s requires WordPress version %s or higher. Please %supdate WordPress &raquo;%s',
+				'<strong>' . self::PLUGIN_NAME . '</strong>',
+				self::MINIMUM_WP_VERSION,
+				'<a href="' . esc_url( admin_url( 'update-core.php' ) ) . '">', '</a>'
+			) );
 		}
 
 		if ( ! $this->is_wc_compatible() ) {
 
-			$this->add_admin_notice(
-				'update_woocommerce',
-				'error',
-				sprintf(
-					'%1$s requires WooCommerce version %2$s or higher. Please %3$supdate WooCommerce%4$s to the latest version, or %5$sdownload the minimum required version &raquo;%6$s',
-					'<strong>' . self::PLUGIN_NAME . '</strong>',
-					self::MINIMUM_WC_VERSION,
-					'<a href="' . esc_url( admin_url( 'update-core.php' ) ) . '">',
-					'</a>',
-					'<a href="' . esc_url( 'https://downloads.wordpress.org/plugin/woocommerce.' . self::MINIMUM_WC_VERSION . '.zip' ) . '">',
-					'</a>'
-				)
-			);
+			$this->add_admin_notice( 'update_woocommerce', 'error', sprintf(
+				'%1$s requires WooCommerce version %2$s or higher. Please %3$supdate WooCommerce%4$s to the latest version, or %5$sdownload the minimum required version &raquo;%6$s',
+				'<strong>' . self::PLUGIN_NAME . '</strong>',
+				self::MINIMUM_WC_VERSION,
+				'<a href="' . esc_url( admin_url( 'update-core.php' ) ) . '">', '</a>',
+				'<a href="' . esc_url( 'https://downloads.wordpress.org/plugin/woocommerce.' . self::MINIMUM_WC_VERSION . '.zip' ) . '">', '</a>'
+			) );
 		}
 	}
 
@@ -318,15 +294,15 @@ class WC_Facebook_Loader {
 	 *
 	 * @since 1.10.0
 	 *
-	 * @param string $slug    The slug for the notice.
-	 * @param string $class   The css class for the notice.
-	 * @param string $message The notice message.
+	 * @param string $slug the slug for the notice
+	 * @param string $class the css class for the notice
+	 * @param string $message the notice message
 	 */
 	private function add_admin_notice( $slug, $class, $message ) {
 
 		$this->notices[ $slug ] = array(
 			'class'   => $class,
-			'message' => $message,
+			'message' => $message
 		);
 	}
 

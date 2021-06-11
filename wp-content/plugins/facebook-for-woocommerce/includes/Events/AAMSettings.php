@@ -14,6 +14,7 @@ defined( 'ABSPATH' ) or exit;
 
 /**
  * Base Automatic advanced matching settings object
+ *
  */
 class AAMSettings {
 
@@ -38,9 +39,9 @@ class AAMSettings {
 	 * @param array $data
 	 */
 	public function __construct( $data = array() ) {
-		$this->enable_automatic_matching         = isset( $data['enableAutomaticMatching'] ) ? $data['enableAutomaticMatching'] : null;
-		$this->enabled_automatic_matching_fields = isset( $data['enabledAutomaticMatchingFields'] ) ? $data['enabledAutomaticMatchingFields'] : null;
-		$this->pixel_id                          = isset( $data['pixelId'] ) ? $data['pixelId'] : null;
+		$this->enable_automatic_matching = isset($data['enableAutomaticMatching']) ? $data['enableAutomaticMatching'] : null;
+		$this->enabled_automatic_matching_fields =	isset($data['enabledAutomaticMatchingFields']) ? $data['enabledAutomaticMatchingFields'] : null;
+		$this->pixel_id = isset($data['pixelId']) ? $data['pixelId'] : null;
 	}
 
 
@@ -52,9 +53,9 @@ class AAMSettings {
 	 * @param string $pixel_id pixel ID
 	 * @return string
 	 */
-	public static function get_url( $pixel_id ) {
+	public static function get_url( $pixel_id ){
 
-		return self::CONNECT_FACEBOOK_DOMAIN . self::SIGNALS_JSON_CONFIG_PATH . '/' . $pixel_id;
+		return self::CONNECT_FACEBOOK_DOMAIN.self::SIGNALS_JSON_CONFIG_PATH.'/'.$pixel_id;
 	}
 
 	/**
@@ -65,16 +66,17 @@ class AAMSettings {
 	 *
 	 * @param string $pixel_id
 	 */
-	public static function build_from_pixel_id( $pixel_id ) {
-		$url      = self::get_url( $pixel_id );
-		$response = wp_remote_get( $url );
+	public static function build_from_pixel_id( $pixel_id ){
+		$url = self::get_url($pixel_id);
+		$response = wp_remote_get($url);
 		if ( is_wp_error( $response ) ) {
 			return null;
-		} else {
+		}
+		else{
 			$response_body = json_decode( wp_remote_retrieve_body( $response ), true );
-			if ( ! array_key_exists( 'errorMessage', $response_body ) ) {
+			if (!array_key_exists('errorMessage', $response_body)){
 				$response_body['matchingConfig']['pixelId'] = $pixel_id;
-				return new AAMSettings( $response_body['matchingConfig'] );
+				return new AAMSettings($response_body['matchingConfig']);
 			}
 		}
 		return null;
@@ -87,7 +89,7 @@ class AAMSettings {
 	 *
 	 * @return bool
 	 */
-	public function get_enable_automatic_matching() {
+	public function get_enable_automatic_matching(){
 		return $this->enable_automatic_matching;
 	}
 
@@ -98,7 +100,7 @@ class AAMSettings {
 	 *
 	 * @return string[]
 	 */
-	public function get_enabled_automatic_matching_fields() {
+	public function get_enabled_automatic_matching_fields(){
 		return $this->enabled_automatic_matching_fields;
 	}
 
@@ -109,7 +111,7 @@ class AAMSettings {
 	 *
 	 * @return string
 	 */
-	public function get_pixel_id() {
+	public function get_pixel_id(){
 		return $this->pixel_id;
 	}
 
@@ -120,7 +122,7 @@ class AAMSettings {
 	 *
 	 * @return AAMSettings
 	 */
-	public function set_enable_automatic_matching( $enable_automatic_matching ) {
+	public function set_enable_automatic_matching($enable_automatic_matching){
 		$this->enable_automatic_matching = $enable_automatic_matching;
 		return $this;
 	}
@@ -132,7 +134,7 @@ class AAMSettings {
 	 *
 	 * @return AAMSettings
 	 */
-	public function set_enabled_automatic_matching_fields( $enabled_automatic_matching_fields ) {
+	public function set_enabled_automatic_matching_fields($enabled_automatic_matching_fields){
 		$this->enabled_automatic_matching_fields = $enabled_automatic_matching_fields;
 		return $this;
 	}
@@ -144,7 +146,7 @@ class AAMSettings {
 	 *
 	 * @return AAMSettings
 	 */
-	public function set_pixel_id( $pixel_id ) {
+	public function set_pixel_id($pixel_id){
 		$this->pixel_id = $pixel_id;
 		return $this;
 	}
@@ -156,12 +158,12 @@ class AAMSettings {
 	 *
 	 * @return string
 	 */
-	public function __toString() {
+	public function __toString(){
 		return json_encode(
 			array(
-				'enableAutomaticMatching'        => $this->enable_automatic_matching,
+				'enableAutomaticMatching' => $this->enable_automatic_matching,
 				'enabledAutomaticMatchingFields' => $this->enabled_automatic_matching_fields,
-				'pixelId'                        => $this->pixel_id,
+				'pixelId' => $this->pixel_id
 			)
 		);
 	}
