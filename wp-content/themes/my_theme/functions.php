@@ -31,6 +31,15 @@ if (!function_exists('wpbootstrap_enqueue_styles')) {
             wp_enqueue_script('script', get_template_directory_uri() . '/js/single-product.js', array(), null, true);
             wp_localize_script('script', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
         }
+        if (is_page("wishlist")) {
+            wp_enqueue_style('my-style', get_template_directory_uri() . './wishlist.css');
+        }
+        if (is_page("cart")) {
+            wp_enqueue_style('my-style', get_template_directory_uri() . './cart.css');
+        }
+        if (is_page("checkout")) {
+            wp_enqueue_style('my-style', get_template_directory_uri() . './checkout.css');
+        }
     }
 }
 

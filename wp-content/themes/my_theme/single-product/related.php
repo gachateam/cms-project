@@ -32,8 +32,8 @@ if ($related_products) : ?>
 			<h2><?php echo esc_html($heading); ?></h2>
 		<?php endif; ?>
 
-		<!-- <div class="container mt-5">
-			<div id="owl-example1" class="owl-carousel owl-theme"> -->
+		<div class="container mt-5">
+			<div id="owl-example1" class="owl-carousel owl-theme">
 
 				<?php foreach ($related_products as $related_product) : ?>
 
@@ -42,14 +42,14 @@ if ($related_products) : ?>
 
 					setup_postdata($GLOBALS['post'] = &$post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
-					// wc_get_template_part('content', 'product');
+					wc_get_template_part('content', 'product');
 					?>
 					
 
 				<?php endforeach; ?>
 
-			<!-- </div>
-		</div> -->
+			</div>
+		</div>
 
 	</section>
 <?php
