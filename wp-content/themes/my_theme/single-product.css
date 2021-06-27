@@ -1,10 +1,12 @@
 mark,
 ins {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
-/* div{
-  background-color: red;
-} */
+
+div {
+    background-color: red;
+}
