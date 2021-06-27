@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Doumacssloz</title>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="header.css">
+    
     <?php wp_head(); ?>
 
 </head>
@@ -17,25 +18,25 @@
 
     <header>
 
-
-
-
-
         <!-- Welcome to Hifidresy_bag -->
+        
+        <div class="header-top" style="background:rgb(245 245 245); padding:15px;overflow:visible">
+        <div class="container">
+            <div class="topbar-outer" >
 
-        <div class="header-top">
-            <div class="topbar-outer" style="background:rgb(245 245 245); padding:20px">
                 <div class="topbar-main theme-container">
                     <span class="site-welcome-message">
                         <span>Welcome to&nbsp;Hifidresy_bag</span>
                     </span>
 
-                    <div class="top_right" >
-
-
+            
                         <!--top right -->
+                    <div class="top_right" style=" position: absolute; top: 20px; right: 0px;margin:0 auto ">
+                       
 
                         <!-- search -->
+
+
                         <div class="header-search">
                             <div class="header-toggle"></div>
 
@@ -44,29 +45,35 @@
                                 <input type="search" id="product-search-field-0" class="search-field" placeholder="Search products…" value="" name="s">
                                 <button type="submit" value="Search">Search</button>
                                 <input type="hidden" name="post_type" value="product">
-                            </form>
 
-                            <div class="header-cart headercart-block">
-						<div class="cart togg">
-		
-			            <div class="shopping_cart tog" title="View your shopping cart">
 					        <a class="cart-contents" href="#" title="View your shopping cart">0</a>
 
-						</div>	
-			        <aside id="widget_cart-2" class="shopping_cart tab_content"><h3 class="widget-title">Cart</h3>
+			            <aside id="cart-2" class="shopping_cart tab_content" style="display:none;">
+                        <img class="img-cart" href=" http://wordpress.prj/wp-content/uploads/2021/06/ONTWNE0.jpg">
 
-                        <div class="widget_shopping_cart_content">
+                        <div class="shopping_cart_content" >
 
-	                    <p class="mini-cart__empty-message">No products in the cart.</p>
+	                        <p class="mini-cart__empty-message" >No products in the cart.</p>
 
-                    </div>
-                    </aside>		
-								</div>							
-									</div>
+                            </div>
 
-                    </div><!--  top right -->
+                                </aside>	
 
+                            </form>
+                            
+                           
+
+
+                      
                         </div>
+
+                    </div></div>
+							
+
+                    
+
+                        </div> 
+                        <!-- top right -->
 
                         <!--cart -->
 
@@ -76,24 +83,29 @@
             </div>
         </div>
 
+        </div>
+
+
         <nav class="navbar navbar-expand-sm navbar-light bg-light">
             <a class="navbar-brand" href="#"></a>
 
             <div class="collapse navbar-collapse" id="collapsibleNavId">
 
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
                     <div class="header_left">
+
                         <li class="nav-item active">
 
                             <a class="nav-link" href="#">Home </a>
+
+
                         </li>
 
-                        <li class="nav-item">
-                            <a href="#">Shop<span class="dc-mega-icon"></span></a>
-                            <!-- css -->
-                            <div class="sub-container mega" style="left: 0px; top: 63px; z-index: 1000; display:none">
-                                <ul class="sub-nav sub">
-                                    <div class="row" style="width: 462px;">
+                        <li class="nav-item active" style="left: 0px; top: 63px; z-index: 1000;">
+                        <a class="nav_link" href="#">Shop</a>
+                                <ul class="sub-nav">
+                                    <div class="row" style="width: 462px;display:none">
                                         <li id="nav-item-shop-layout" class="nav-item shop-layout"><a href="#" class="mega-hdr-a" style="height: 24px;">Shop Layout</a>
                                             <ul class="sub-nav">
                                                 <li id="nav-item-left" class="nav-item left"><a href="#">Left Sidebar</a></li>
@@ -102,19 +114,18 @@
                                                 <li id="nav-item-product-brand" class="nav-item product-brand"><a href="#">Products Brands</a></li>
                                                 <li id="nav-item-product-category" class="nav-item product-category"><a href="#">Product Category</a></li>
                                             </ul>
-
                                         </li>
-                        </li>
-                        <li id="nav-item-product-type" class="nav-item product-type"><a href="#" class="mega-hdr-a" style="height: 24px;">Product Type</a>
-                            <ul class="sub-nav">
-                                <li id="nav-item-variable-product" class="nav-item variable-product"><a href="#">Variable Product</a></li>
-                                <li id="nav-item-external-product" class="nav-item external-product"><a href="#">External Product</a></li>
-                                <li id="nav-item-group-product" class="nav-item group-product"><a href="#">Group Product</a></li>
-                                <li id="nav-item-special-product" class="sale-label special_product"><a href="#">Special Products</a></li>
-                                <li id="nav-item-rated-product" class="nav-item rated-product"><a href="#">Top rated product</a></li>
-                            </ul>
-                        </li>
-                    </div>
+                                        </li>
+                                             <li id="nav-item-product-type" class="nav-item product-type"><a href="#" class="mega-hdr-a" style="height: 24px;">Product Type</a>
+                                        <ul class="sub-nav">
+                                        <li id="nav-item-variable-product" class="nav-item variable-product"><a href="#">Variable Product</a></li>
+                                        <li id="nav-item-external-product" class="nav-item external-product"><a href="#">External Product</a></li>
+                                        <li id="nav-item-group-product" class="nav-item group-product"><a href="#">Group Product</a></li>
+                                        <li id="nav-item-special-product" class="sale-label special_product"><a href="#">Special Products</a></li>
+                                            <li id="nav-item-rated-product" class="nav-item rated-product"><a href="#">Top rated product</a></li>
+                                        </ul>
+                                        </li>
+                                    </div>
 
                 </ul>
             </div>
