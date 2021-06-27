@@ -8,6 +8,6 @@
 .mega{
     left: 0px; top: 63px; z-index: 1000;
 }
-.topbar-main theme-containerbar-outer{
-    background: red;
+.header-top{
+    background: rgb(245 245 245);
 }
