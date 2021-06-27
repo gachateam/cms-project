@@ -13,6 +13,7 @@ if (!function_exists('wpbootstrap_enqueue_styles')) {
         wp_enqueue_script('my-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js');
         wp_enqueue_script('my-owl-carowsel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js');
         wp_enqueue_style('my-woocommerce', get_template_directory_uri() . '/woocommerce/woocommerce.css');
+        wp_enqueue_style('my-style', get_template_directory_uri() . './footer.css');
 
         if (is_home()) {
             wp_enqueue_style('my-style', get_template_directory_uri() . './style.css');
