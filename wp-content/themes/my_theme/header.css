@@ -1,13 +1,28 @@
-.top_right
-{
-    position: absolute;
-    top: 8px;
-    right: 16px;
-    
+a{
+    color: #000000
 }
 .mega{
     left: 0px; top: 63px; z-index: 1000;
 }
 .header-top{
     background: rgb(245 245 245);
+}
+
+
+
+.header-search {
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+.header-main {
+    border-bottom: 1px solid #eee;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+     width: 100%;
+}
+.nav-item{
+    padding-right: 10px;
 }
