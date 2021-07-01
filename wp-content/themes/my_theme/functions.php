@@ -49,9 +49,36 @@ require 'inc/mytheme-funtion.php';
 require 'inc/mytheme-hook.php';
 
 
-function mytheme_add_woocommerce_support()
+function setup()
 {
-    add_theme_support('woocommerce');
-}
+    add_theme_support(
+        'woocommerce',
+        apply_filters(
+            'storefront_woocommerce_args',
+            array(
+                'single_image_width'    => 416,
+                'thumbnail_image_width' => 324,
+                'product_grid'          => array(
+                    'default_columns' => 3,
+                    'default_rows'    => 4,
+                    'min_columns'     => 1,
+                    'max_columns'     => 6,
+                    'min_rows'        => 1,
+                ),
+            )
+        )
+    );
 
-add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
+
+    /**
+     * Add 'storefront_woocommerce_setup' action.
+     *
+     * @since  2.4.0
+     */
+    do_action('storefront_woocommerce_setup');
+    add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+}
+add_action('after_setup_theme', 'setup');
