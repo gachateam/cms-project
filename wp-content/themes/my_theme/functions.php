@@ -79,6 +79,6 @@ function setup()
      * @since  2.4.0
      */
     do_action('storefront_woocommerce_setup');
-    add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+    // add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 }
 add_action('after_setup_theme', 'setup');
