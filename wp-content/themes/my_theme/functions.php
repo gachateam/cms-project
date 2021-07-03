@@ -40,6 +40,7 @@ if (!function_exists('wpbootstrap_enqueue_styles')) {
         if (is_page("checkout")) {
             wp_enqueue_style('my-style', get_template_directory_uri() . './checkout.css');
         }
+        
     }
 }
 
@@ -48,10 +49,17 @@ add_action('wp_enqueue_scripts', 'wpbootstrap_enqueue_styles');
 require 'inc/mytheme-funtion.php';
 require 'inc/mytheme-hook.php';
 
+wp_enqueue_style('my-style-header',get_template_directory_uri() . './header.css');
+
 
 function mytheme_add_woocommerce_support()
 {
     add_theme_support('woocommerce');
 }
-
+function register_my_menu() {
+   
+    register_nav_menu('left-menu', __('Left Menu','project'));
+    register_nav_menu('right-menu', __('Rigth Menu','project'));
+}
+add_action( 'init', 'register_my_menu' );
 add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
