@@ -81,6 +81,10 @@ td {
     vertical-align: baseline;
 }
 
+ul {
+    list-style: none;
+}
+
 .full-width #primary {
     width: 100% !important;
     margin: 0 !important;
@@ -499,7 +503,7 @@ a {
     line-height: 20px;
     font-family: "Raleway", Arial, Helvetica, sans-serif;
     box-shadow: 2px 2px 4px rgb(0 0 0 / 9%);
-    height: 50px;    
+    height: 50px;
     right: 0;
 }
 

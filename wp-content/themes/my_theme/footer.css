@@ -606,6 +606,7 @@ input {
 
 ul {
     clear: both;
+    list-style: none;
 }
 
 .follow-us a {
