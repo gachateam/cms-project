@@ -15,11 +15,27 @@
  * @version     1.6.4
  */
 
+
+ 
+
+
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
 get_header('shop'); ?>
+
+
+
+
+<div class="page-title header">
+  <div class="page-title-inner">
+     <h3 class="entry-title-main">
+Sky Blue Designer Shirt    </h3>
+    <div class="breadcrumbs">
+    <p id="breadcrumbs"><span><span><a href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/">Home</a> / <span><a href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/shop/">Products</a> / <span class="breadcrumb_last" aria-current="page">Sky Blue Designer Shirt</span></span></span></span></p>  </div>
+  <nav class="woocommerce-breadcrumb"><span><a href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3">Home</a></span> / <span><a href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/product-category/jackets%e2%80%8e/">Jackets‎</a></span> / <span>Sky Blue Designer Shirt</span></nav></div>
+</div>
 
 	<?php
     /**
@@ -39,6 +55,8 @@ get_header('shop'); ?>
 		<?php endwhile; // end of the loop. 
         ?>
 
+        
+
 	<?php
     /**
      * woocommerce_after_main_content hook.
@@ -56,6 +74,14 @@ get_header('shop'); ?>
      */
     do_action('woocommerce_sidebar');
     ?>
+
+
+
+    
+
+            
+
+
 
 <?php
 get_footer('shop');
