@@ -42,12 +42,12 @@
                 //     $class = isset( $tab['icon'] ) ? ' rx-has-icon' : '';
                 //     $class .= $active;
                     ?>
-                        <!-- <li data-tabid="<?php //echo $tid++; ?>" class="<?php// echo esc_attr( $class ); ?>" data-tab="<?php //echo esc_attr( $id ); ?>">
+                        <!-- <li data-tabid="<?php //echo $tid++; ?>" class="<?php // echo esc_attr( $class ); ?>" data-tab="<?php //echo esc_attr( $id ); ?>">
                             <?php //if( isset( $tab['icon'] ) ) : ?>
                                 <span class="rx-menu-icon">
                                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><g><circle class="st0" cx="50" cy="28.1" r="28.1"/><path class="st0" d="M29.9,59.5c5.8,3.8,12.7,5.9,20.1,5.9s14.3-2.2,20.1-5.9V100L50,82.7L29.9,100V59.5z"/></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
                                 </span>
-                            <?php// endif; ?>
+                            <?php // endif; ?>
                             <span class="rx-menu-title"><?php //echo esc_html($tab['title']); ?></span>
                         </li> -->
                     <?php

@@ -23,17 +23,17 @@ if ( ! class_exists( 'Storefront_WooCommerce' ) ) :
 		 * @since 1.0
 		 */
 		public function __construct() {
-			// add_action( 'after_setup_theme', array( $this, 'setup' ) );
-			// add_filter( 'body_class', array( $this, 'woocommerce_body_class' ) );
+			add_action( 'after_setup_theme', array( $this, 'setup' ) );
+			add_filter( 'body_class', array( $this, 'woocommerce_body_class' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_scripts' ), 20 );
-			// add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
-			// add_filter( 'woocommerce_product_thumbnails_columns', array( $this, 'thumbnail_columns' ) );
-			// add_filter( 'woocommerce_breadcrumb_defaults', array( $this, 'change_breadcrumb_delimiter' ) );
+			add_filter( 'woocommerce_output_related_products_args', array( $this, 'related_products_args' ) );
+			add_filter( 'woocommerce_product_thumbnails_columns', array( $this, 'thumbnail_columns' ) );
+			add_filter( 'woocommerce_breadcrumb_defaults', array( $this, 'change_breadcrumb_delimiter' ) );
 
 			// Integrations.
-			// add_action( 'storefront_woocommerce_setup', array( $this, 'setup_integrations' ) );
-			// add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_integrations_scripts' ), 99 );
-			// add_action( 'wp_enqueue_scripts', array( $this, 'add_customizer_css' ), 140 );
+			add_action( 'storefront_woocommerce_setup', array( $this, 'setup_integrations' ) );
+			add_action( 'wp_enqueue_scripts', array( $this, 'woocommerce_integrations_scripts' ), 99 );
+			add_action( 'wp_enqueue_scripts', array( $this, 'add_customizer_css' ), 140 );
 
 			// Instead of loading Core CSS files, we only register the font families.
 			add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );

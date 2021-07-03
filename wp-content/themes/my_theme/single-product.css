@@ -1,10 +1,29 @@
 mark,
 ins {
-  text-decoration: none;
+    text-decoration: none;
 }
+
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
-/* div{
-  background-color: red;
-} */
+
+
+/* làm trong cái này 
+
+*/
+
+.page-title {
+    background: transparent;
+    border-bottom: 1px solid #eeeeee;
+    padding: 30px 0;
+}
+
+.page-title {
+    margin-bottom: 40px;
+    background: #f5f5f5;
+    padding: 37px 0;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    vertical-align: top;
+}

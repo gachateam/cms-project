@@ -11,7 +11,22 @@
  * @package storefront
  */
 
-get_header(); ?>
+get_header();
+
+?>
+
+<style>
+    .entry-title {
+        text-align: center;
+    }
+
+    .entry-header ul {
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        align-items: center;
+    }
+</style>
 
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">

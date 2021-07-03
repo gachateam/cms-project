@@ -1,4 +1,38 @@
 <?php
+function setup()
+{
+    add_theme_support(
+        'woocommerce',
+        apply_filters(
+            'storefront_woocommerce_args',
+            array(
+                'single_image_width'    => 416,
+                'thumbnail_image_width' => 324,
+                'product_grid'          => array(
+                    'default_columns' => 3,
+                    'default_rows'    => 4,
+                    'min_columns'     => 1,
+                    'max_columns'     => 6,
+                    'min_rows'        => 1,
+                ),
+            )
+        )
+    );
+
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
+
+    /**
+     * Add 'storefront_woocommerce_setup' action.
+     *
+     * @since  2.4.0
+     */
+    do_action('storefront_woocommerce_setup');
+    add_filter('woocommerce_enqueue_styles', '__return_empty_array');
+}
+add_action('after_setup_theme', 'setup');
+
 if (!function_exists('wpbootstrap_enqueue_styles')) {
     function wpbootstrap_enqueue_styles()
     {
@@ -13,6 +47,7 @@ if (!function_exists('wpbootstrap_enqueue_styles')) {
         wp_enqueue_script('my-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js');
         wp_enqueue_script('my-owl-carowsel', 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js');
         wp_enqueue_style('my-woocommerce', get_template_directory_uri() . '/woocommerce/woocommerce.css');
+        wp_enqueue_style('my-style-footer', get_template_directory_uri() . './footer.css');
 
         if (is_home()) {
             wp_enqueue_style('my-style', get_template_directory_uri() . './style.css');
@@ -28,7 +63,6 @@ if (!function_exists('wpbootstrap_enqueue_styles')) {
 
         if (is_product()) {
             wp_enqueue_style('my-style', get_template_directory_uri() . './single-product.css');
-            wp_enqueue_script('script', get_template_directory_uri() . '/js/single-product.js', array(), null, true);
             wp_localize_script('script', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
         }
         if (is_page("wishlist")) {
@@ -47,11 +81,3 @@ add_action('wp_enqueue_scripts', 'wpbootstrap_enqueue_styles');
 
 require 'inc/mytheme-funtion.php';
 require 'inc/mytheme-hook.php';
-
-
-function mytheme_add_woocommerce_support()
-{
-    add_theme_support('woocommerce');
-}
-
-add_action('after_setup_theme', 'mytheme_add_woocommerce_support');
