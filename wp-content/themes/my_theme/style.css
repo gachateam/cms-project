@@ -694,3 +694,12 @@ span.onsale {
 #owl-example5:hover .nav-button {
     opacity: 1;
 }
+
+ul li .product-block-inner .image1{
+    width: 100%;
+    opacity: 0;
+}
+
+ul li .product-block-inner .image2{
+    width: 100%;
+}

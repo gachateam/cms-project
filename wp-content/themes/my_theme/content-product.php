@@ -25,45 +25,50 @@ if (empty($product) || !$product->is_visible()) {
     return;
 }
 ?>
-<li <?php wc_product_class('', $product); ?>>
-    <?php
-    /**
-     * Hook: woocommerce_before_shop_loop_item.
-     *
-     * @hooked woocommerce_template_loop_product_link_open - 10
-     */
-    do_action('woocommerce_before_shop_loop_item');
+<div class="container">
+    <li <?php wc_product_class('', $product); ?>>
+        <?php
+        $image = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'single-post-thumbnail');
+        ?>
+        <div class="product-block-inner">
+            <div class="image-block">
+                <a href="<?php echo $product->get_permalink() ?>">
+                    <?php
+                    $link = $image[0] ?? get_template_directory_uri() . '/img/default-thumbnail.jpg';
+                    ?>
+                    <img class="image2 product-image" alt="..." src="<?php echo $link ?>">
+                    <?php
+                    unset($link);
+                    $link = wp_get_attachment_url($product->get_gallery_image_ids()[0]) ?: get_template_directory_uri() . '/img/default-thumbnail.jpg';
+                    ?>
+                    <img class="image1 product-image" alt="..." src="<?php echo $link ?>">
+                    <?php
+                    if ($product->is_on_sale()) {
+                        $persent = (($product->get_regular_price() - $product->get_sale_price()) / $product->get_regular_price()) * 100;
+                        echo '<span class="onsale">-' . $persent . '%</span>';
+                    }
+                    ?>
+                    <span class="price">
+                        <?php echo $product->get_price_html() ?>
+                    </span>
+                </a>
+                <a href="#" class="button yith-wcqv-button" data-product_id="<?php echo $product->id ?>">Quick View</a>
+            </div>
 
-    /**
-     * Hook: woocommerce_before_shop_loop_item_title.
-     *
-     * @hooked woocommerce_show_product_loop_sale_flash - 10
-     * @hooked woocommerce_template_loop_product_thumbnail - 10
-     */
-    // remove_action('woocommerce_before_shop_loop_item_title','woocommerce_show_product_loop_sale_flash');
-    do_action('woocommerce_before_shop_loop_item_title');
+            <?php
+            if (!wc_review_ratings_enabled()) {
+                return;
+            }
+            echo '<div class="rating">' . wc_get_rating_html($product->get_average_rating()) . '</div>';
+            ?>
 
-    /**
-     * Hook: woocommerce_shop_loop_item_title.
-     *
-     * @hooked woocommerce_template_loop_product_title - 10
-     */
-    do_action('woocommerce_shop_loop_item_title');
+            <div class="product-name text-center">
+                <?php echo $product->name ?>
+            </div>
 
-    /**
-     * Hook: woocommerce_after_shop_loop_item_title.
-     *
-     * @hooked woocommerce_template_loop_rating - 5
-     * @hooked woocommerce_template_loop_price - 10
-     */
-    do_action('woocommerce_after_shop_loop_item_title');
-
-    /**
-     * Hook: woocommerce_after_shop_loop_item.
-     *
-     * @hooked woocommerce_template_loop_product_link_close - 5
-     * @hooked woocommerce_template_loop_add_to_cart - 10
-     */
-    do_action('woocommerce_after_shop_loop_item');
-    ?>
-</li>
+            <div class="product-button-outer">
+                <a href="/?add-to-cart=<?php echo $product->id ?>" class="button product_type_simple add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo $product->id ?>"><i class="fas fa-plus add-to-cart"></i><?php echo $product->add_to_cart_text() ?></a>
+            </div>
+        </div>
+    </li>
+</div>
