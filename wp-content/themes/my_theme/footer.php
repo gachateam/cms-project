@@ -129,7 +129,6 @@
                     </div>
                 </div>
                 <aside id="accepted_payment_methods-2" class="widget widget_accepted_payment_methods">
-                    <h3 class="widget-title">Payment</h3>
                     <ul class="accepted-payment-methods">
                         <li class="maestro"><span>Maestro</span></li>
                         <li class="mastercard"><span>MasterCard</span></li>

@@ -147,6 +147,17 @@ td {
     -o-transition: all 500ms ease 0s;
 }
 
+.service-list:hover .service-content .icon-image,
+.service-list:focus .service-content .icon-image,
+.service-list:active .service-content .icon-image {
+    transform: rotate(360deg);
+    transition: all 500ms ease 0s;
+}
+
+.service_other_text:hover {
+    color: #858585;
+}
+
 .service-1 .icon-image {
     background-position: center 4px;
 }
@@ -474,7 +485,7 @@ textarea {
     color: #000000;
 }
 
-input[type="hidden" i] {
+input[type="hidden"i] {
     display: none;
     appearance: initial;
     background-color: initial;
@@ -551,9 +562,6 @@ input {
     background: #000 url(img/subscribe.png) no-repeat scroll center 12px;
     border: medium none;
     border-radius: 0;
-    -webkit-border-radius: 0;
-    -khtml-border-radius: 0;
-    -moz-border-radius: 0;
     color: #ffffff;
     font-size: 0;
     height: 40px;
@@ -561,6 +569,12 @@ input {
     padding: 10px;
     position: relative;
     width: 40px;
+    transition: .5s;
+}
+
+.site-footer .newsletter .newsletter-submit:hover,
+.site-footer .tnp .tnp-submit:hover {
+    background-color: #494949;
 }
 
 .widgets-follow-us {
@@ -613,6 +627,7 @@ ul {
     color: #000;
     font-size: 13px;
     margin: 0;
+    transition: .5s;
 }
 
 .fa {
@@ -669,6 +684,26 @@ i {
 
 .fa-google-plus:before {
     content: "\f0d5";
+}
+
+.follow-us a:hover.google-plus i {
+    color: #C63D2D;
+}
+
+.follow-us a:hover.facebook i {
+    color: #3b5998;
+}
+
+.follow-us a:hover.twitter i {
+    color: #4099FF;
+}
+
+.follow-us a:hover.linkedin i {
+    color: #007bb6;
+}
+
+.follow-us a:hover.rss i {
+    color: #FA9B39;
 }
 
 

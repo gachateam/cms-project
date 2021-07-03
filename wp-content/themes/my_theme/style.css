@@ -90,7 +90,7 @@ a {
     top: 0;
 }
 
-.content {
+.mySlides.fade .content {
     position: absolute;
     top: 50%;
     transform: translateY(-50%) translateX(-150%);
