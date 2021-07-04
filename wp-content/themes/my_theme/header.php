@@ -11,21 +11,21 @@
 	<?php wp_head(); ?>
 
 
-
 	<link rel="stylesheet" id="jquery-colorbox-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/plugins/yith-woocommerce-compare/assets/css/colorbox.css?ver=5.2.11" media="all">
 	<link rel="stylesheet" id="yith-quick-view-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/plugins/yith-woocommerce-quick-view/assets/css/yith-quick-view.css?ver=5.2.11" media="all">
 
 
 	
-	
 <link rel="stylesheet" id="woocommerce_prettyPhoto_css-css" href="//wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/plugins/woocommerce/assets/css/prettyPhoto.css?ver=5.2.11" media="all">
-		
+		 
 <link rel="stylesheet" id="tm-fonts-css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic%7CBitter%3A400%2C700&amp;subset=latin%2Clatin-ext" media="all">
 	
 <link rel="stylesheet" id="FontAwesome-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/themes/hifidresy/fonts/css/font-awesome.css?ver=4.7.0" media="all">
+	 
+<link rel="stylesheet" id="tm-style-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/themes/hifidresy_bag/style.css?ver=1.0" media="all">
 	
 <link rel="stylesheet" id="js_composer_front-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.7" media="all">
-<link rel="stylesheet" id="tm-style-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/themes/hifidresy_bag/style.css?ver=1.0" media="all">	
+
 
 
 </head>
@@ -44,7 +44,7 @@
 						<!-- Search -->
 						<div class="header-search">
 							<div class="header-toggle"></div>
-							<form role="search" method="get" class="woocommerce-product-search" action="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/">
+							<form role="search" method="get" class="woocommerce-product-search" action="">
 								<label class="screen-reader-text" for="woocommerce-product-search-field-0">Search for:</label>
 								<input type="search" id="woocommerce-product-search-field-0" class="search-field" placeholder="Search products…" value="" name="s">
 								<button type="submit" value="Search">Search</button>
@@ -108,7 +108,7 @@
 												'menu_id' => 'left-menu',
 												'menu_class' => 'menu-mainmenu'
 											)
-										)?>	
+											);?>	
 										
 									</div>
 
