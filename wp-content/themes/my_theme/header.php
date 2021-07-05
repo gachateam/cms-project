@@ -12,18 +12,11 @@
 
 
 	<link rel="stylesheet" id="jquery-colorbox-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/plugins/yith-woocommerce-compare/assets/css/colorbox.css?ver=5.2.11" media="all">
-	<link rel="stylesheet" id="yith-quick-view-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/plugins/yith-woocommerce-quick-view/assets/css/yith-quick-view.css?ver=5.2.11" media="all">
-
-
-	
-<link rel="stylesheet" id="woocommerce_prettyPhoto_css-css" href="//wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/plugins/woocommerce/assets/css/prettyPhoto.css?ver=5.2.11" media="all">
-		 
+	<link rel="stylesheet" id="yith-quick-view-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/plugins/yith-woocommerce-quick-view/assets/css/yith-quick-view.css?ver=5.2.11" media="all">	
+<link rel="stylesheet" id="woocommerce_prettyPhoto_css-css" href="//wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/plugins/woocommerce/assets/css/prettyPhoto.css?ver=5.2.11" media="all">	 
 <link rel="stylesheet" id="tm-fonts-css" href="//fonts.googleapis.com/css?family=Source+Sans+Pro%3A300%2C400%2C700%2C300italic%2C400italic%2C700italic%7CBitter%3A400%2C700&amp;subset=latin%2Clatin-ext" media="all">
-	
-<link rel="stylesheet" id="FontAwesome-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/themes/hifidresy/fonts/css/font-awesome.css?ver=4.7.0" media="all">
-	 
+<link rel="stylesheet" id="FontAwesome-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/themes/hifidresy/fonts/css/font-awesome.css?ver=4.7.0" media="all"> 
 <link rel="stylesheet" id="tm-style-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/themes/hifidresy_bag/style.css?ver=1.0" media="all">
-	
 <link rel="stylesheet" id="js_composer_front-css" href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=5.7" media="all">
 
 
@@ -47,7 +40,7 @@
 							<form role="search" method="get" class="woocommerce-product-search" action="">
 								<label class="screen-reader-text" for="woocommerce-product-search-field-0">Search for:</label>
 								<input type="search" id="woocommerce-product-search-field-0" class="search-field" placeholder="Search products…" value="" name="s">
-								<button type="submit" value="Search">Search</button>
+								<button type="submit" value="Search"><img src="http://wordpress.prj/wp-content/uploads/2021/06/iconfinder_172546_search_icon_32px.png" style="width: 15px ;"></button>
 								<input type="hidden" name="post_type" value="product">
 							</form>
 
@@ -59,10 +52,9 @@
 
 								<div class="shopping_cart tog" title="View your shopping cart">
 									<a class="cart-contents" href="#" title="View your shopping cart">1</a>
-
+									<img src="http://wordpress.prj/wp-content/uploads/2021/06/iconfinder_1564496_basket_cart_shop_shopping_store_icon_32px.png" style="width: 25px;">
 								</div>
 								<aside id="woocommerce_widget_cart-2" class="widget woocommerce widget_shopping_cart tab_content">
-									<h3 class="widget-title">Cart</h3>
 									<div class="widget_shopping_cart_content">
 
 										<ul class="woocommerce-mini-cart cart_list product_list_widget ">
@@ -84,6 +76,7 @@
 							</div>
 
 						</div>
+
 					</div><!--  top right -->
 				</div>
 			</div>
@@ -139,7 +132,7 @@
 									<!-- Header Menu Start  -->
 
 
-									<div class="header-menu-links">
+									<div class="header-menu-links" style="word-spacing:-3;">
 										<span class="top-menu-toggle"> </span>
 
 											<?php wp_nav_menu(
