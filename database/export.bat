@@ -5,4 +5,4 @@ set "HH=%dt:~8,2%" & set "Min=%dt:~10,2%" & set "Sec=%dt:~12,2%"
 
 set "datestamp=%YYYY%%MM%%DD%" & set "timestamp=%HH%%Min%%Sec%"
 set path=C:\wamp64\bin\mysql\mysql5.7.31\bin
-mysqldump -uroot -p wordpress > wordpress_5x_%datestamp%_%timestamp%.sql
+mysqldump -uroot -p wordpress_prj > wordpress_5x_%datestamp%_%timestamp%.sql

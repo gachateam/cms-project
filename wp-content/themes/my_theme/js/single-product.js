@@ -11,8 +11,8 @@ var option = {
         },
         600: {
             items: 2,
-            nav: false,
-            loop: true,
+            nav: true,
+            loop: true
         },
         1000: {
             items: 4,
@@ -23,3 +23,12 @@ var option = {
 }
 var owl1 = $("#owl-example1")
 owl1.owlCarousel(option);
+
+$('#slick-slider').slick({
+    autoPlay: true,
+    arrows: true,
+    vertical: true,
+    nextArrow: '<div class="center"><div class="nav-button owl-next"><i class="fas fa-arrow-right"></i></div></div>',
+    prevArrow: '<div class="center"><div class="nav-button owl-prev"><i class="fas fa-arrow-left"></i></div></div>',
+    slidesToShow: 4,
+});

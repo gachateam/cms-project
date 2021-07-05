@@ -16,28 +16,13 @@
  */
 
 
- 
-
-
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
 }
 
 get_header('shop'); ?>
 
-
-
-
-<div class="page-title header">
-  <div class="page-title-inner">
-     <h3 class="entry-title-main">
-Sky Blue Designer Shirt    </h3>
-    <div class="breadcrumbs">
-    <p id="breadcrumbs"><span><span><a href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/">Home</a> / <span><a href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/shop/">Products</a> / <span class="breadcrumb_last" aria-current="page">Sky Blue Designer Shirt</span></span></span></span></p>  </div>
-  <nav class="woocommerce-breadcrumb"><span><a href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3">Home</a></span> / <span><a href="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/product-category/jackets%e2%80%8e/">Jackets‎</a></span> / <span>Sky Blue Designer Shirt</span></nav></div>
-</div>
-
-	<?php
+<?php
     /**
      * woocommerce_before_main_content hook.
      *
@@ -45,43 +30,27 @@ Sky Blue Designer Shirt    </h3>
      * @hooked woocommerce_breadcrumb - 20
      */
     do_action('woocommerce_before_main_content');
-    ?>
 
-		<?php while (have_posts()) : ?>
-			<?php the_post(); ?>
+    while (have_posts()) {
+        the_post(); 
+    
+        wc_get_template_part('content', 'single-product'); 
+    }
 
-			<?php wc_get_template_part('content', 'single-product'); ?>
-
-		<?php endwhile; // end of the loop. 
-        ?>
-
-        
-
-	<?php
     /**
      * woocommerce_after_main_content hook.
      *
      * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
      */
     do_action('woocommerce_after_main_content');
-    ?>
 
-	<?php
     /**
-     * woocommerce_sidebar hook.
-     *
-     * @hooked woocommerce_get_sidebar - 10
-     */
+    * woocommerce_sidebar hook.
+    *
+    * @hooked woocommerce_get_sidebar - 10
+    */
     do_action('woocommerce_sidebar');
-    ?>
-
-
-
-    
-
-            
-
-
+?>
 
 <?php
 get_footer('shop');

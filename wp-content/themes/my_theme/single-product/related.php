@@ -29,25 +29,26 @@ if ($related_products) : ?>
 
 		if ($heading) :
 		?>
-			<h2><?php echo esc_html($heading); ?></h2>
+			<h2 class="text-center"><?php echo esc_html($heading); ?></h2>
 		<?php endif; ?>
 
-		<div class="container mt-5">
-			<div id="owl-example1" class="owl-carousel owl-theme">
+		<div class="content">
+			<div class="container mt-5">
+				<div id="owl-example1" class="owl-carousel owl-theme">
 
-				<?php foreach ($related_products as $related_product) : ?>
+					<?php foreach ($related_products as $related_product) : ?>
 
-					<?php
-					$post_object = get_post($related_product->get_id());
+						<?php
+						$post_object = get_post($related_product->get_id());
 
-					setup_postdata($GLOBALS['post'] = &$post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
+						setup_postdata($GLOBALS['post'] = &$post_object); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
-					wc_get_template_part('content', 'product');
-					?>
-					
+						wc_get_template_part('loop', 'owlcarowsel');
+						?>
 
-				<?php endforeach; ?>
+					<?php endforeach; ?>
 
+				</div>
 			</div>
 		</div>
 
