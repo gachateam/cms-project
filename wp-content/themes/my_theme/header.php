@@ -83,71 +83,67 @@
 
 
 		<div class="site-header-main">
-			<div class="header-main  header-fix">
-				<div class="theme-container">
-					<!-- Start header_left -->
-					<div class="header_left">
+			<div class="header-main header-fix">
+				<div class="container">
+					<div class="header-block">
+						<!-- Start header_left -->
+						<div class="header_left">
 
-						<!-- #site-navigation -->
-						<nav id="site-navigation" class="navigation-bar main-navigation more">
-							<h3 class="menu-toggle">Menu</h3>
-							<div class="mega-menu">
-								<div class="menu-mainmenu-container">
+							<!-- #site-navigation -->
+							<nav id="site-navigation" class="navigation-bar main-navigation more">
+								<h3 class="menu-toggle">Menu</h3>
+								<div class="mega-menu">
+									<div class="menu-mainmenu-container">
 
-									<?php wp_nav_menu(
-										array(
-											'theme_location' => 'left-menu',
-											'container' => 'false',
-											'menu_id' => 'left-menu',
-											'menu_class' => 'menu-mainmenu'
-										)
-									); ?>
+										<?php wp_nav_menu(
+											array(
+												'theme_location' => 'left-menu',
+												'container' => 'false',
+												'menu_id' => 'left-menu',
+												'menu_class' => 'menu-mainmenu'
+											)
+										); ?>
+
+									</div>
 
 								</div>
-
+							</nav>
+						</div>
+						<!-- Start header_center -->
+						<div class="header_center">
+							<!-- Header LOGO-->
+							<div class="header-logo">
+								<a href="#" title="Hifidresy_bag" rel="home">
+									<img alt="Hifidresy" src="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/uploads/2017/12/logo.png"> </a>
 							</div>
-						</nav>
-					</div>
-					<!-- Start header_center -->
-					<div class="header_center">
-						<!-- Header LOGO-->
-						<div class="header-logo">
-							<a href="#" title="Hifidresy_bag" rel="home">
-								<img alt="Hifidresy" src="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/uploads/2017/12/logo.png"> </a>
+							<!-- Header Mob LOGO-->
+							<div class="header-mob-logo">
+								<a href="#" title="Hifidresy_bag" rel="home">
+									<img alt="Hifidresy" src="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/uploads/2017/12/Mob-logo.png"> </a>
+							</div>
 						</div>
-						<!-- Header Mob LOGO-->
-						<div class="header-mob-logo">
-							<a href="#" title="Hifidresy_bag" rel="home">
-								<img alt="Hifidresy" src="http://wordpress.templatemela.com/woo/WCM02/WCM020047/WP3/wp-content/uploads/2017/12/Mob-logo.png"> </a>
-						</div>
-					</div>
 
-					<!-- Start header_right -->
-					<div class="header_right">
-						<!-- Header topbar menu -->
-						<div class="topbar-links">
-							<div class="topbar-main">
+						<!-- Start header_right -->
+						<div class="header_right">
+							<!-- Header topbar menu -->
+							<div class="topbar-links">
+								<div class="topbar-main">
 
+									<!-- Header Menu Start  -->
 
-								<!-- Header Menu Start  -->
-
-
-								<div class="header-menu-links" style="word-spacing:-3;">
-									<span class="top-menu-toggle"> </span>
-
-									<?php wp_nav_menu(
-										array(
-											'theme_location' => 'right-menu',
-											'container' => 'false',
-											'menu_id' => 'right-menu',
-											'menu_class' => 'menu-header-top-links'
-										)
-									) ?>
-
+									<div class="header-menu-links" style="word-spacing:-3;">
+										<span class="top-menu-toggle"></span>
+										<?php wp_nav_menu(
+											array(
+												'theme_location' => 'right-menu',
+												'container' => 'false',
+												'menu_id' => 'right-menu',
+												'menu_class' => 'menu-header-top-links'
+											)
+										) ?>
+									</div>
+									<!-- Header Menu End  -->
 								</div>
-
-								<!-- Header Menu End  -->
-
 							</div>
 						</div>
 					</div>
