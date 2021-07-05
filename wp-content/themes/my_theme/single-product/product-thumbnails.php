@@ -26,9 +26,19 @@ if (!function_exists('wc_get_gallery_image_html')) {
 global $product;
 
 $attachment_ids = $product->get_gallery_image_ids();
-
+echo '<div id="slick-slider">';
 if ($attachment_ids && $product->get_image_id()) {
 	foreach ($attachment_ids as $attachment_id) {
-		echo wc_get_gallery_image_html($attachment_id); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
+		echo '<div><img alt="test" class="img-fluid" src="' . wp_get_attachment_image_src($attachment_id)[0] . '"></div>';
 	}
 }
+echo "</div>";
+
+
+//'<img alt="test" src="' . wp_get_attachment_image_src($attachment_id)[0] . '">'
+?>
+<!-- <ol class="flex-control-nav flex-control-thumbs">
+	<li><img src="http://wordpress.prj/wp-content/uploads/2021/06/dog-100x100.jpg" class="flex-active" draggable="false"></li>
+	<li><img src="http://wordpress.prj/wp-content/uploads/2021/06/CMS-3-100x100.jpg" draggable="false" class=""></li>
+	<li><img src="http://wordpress.prj/wp-content/uploads/2021/06/CMS-1-100x100.jpg" draggable="false"></li>
+</ol> -->

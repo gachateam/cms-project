@@ -1,1 +1,0 @@
-<div class="rx_comment_unapprove"><?php esc_html_e( 'Unapproved', 'reviewx' );?></div>
