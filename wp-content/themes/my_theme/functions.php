@@ -1,6 +1,10 @@
 <?php
 function setup()
 {
+    register_sidebar( array(
+        'name' => 'WidgetAreaForShopPage'
+    ));
+
     add_theme_support(
         'woocommerce',
         apply_filters(
@@ -22,6 +26,7 @@ function setup()
     add_theme_support('wc-product-gallery-zoom');
     add_theme_support('wc-product-gallery-lightbox');
     add_theme_support('wc-product-gallery-slider');
+	remove_action( 'woocommerce_before_shop_loop' , 'woocommerce_result_count', 20 );
 
     /**
      * Add 'storefront_woocommerce_setup' action.
@@ -61,8 +66,6 @@ if (!function_exists('wpbootstrap_enqueue_styles')) {
 
         if (is_shop()) {
             wp_enqueue_style('my-style', get_template_directory_uri() . './style.css');
-            wp_enqueue_script('script', get_template_directory_uri() . '/js/main.js', array(), null, true);
-            wp_localize_script('script', 'myAjax', array('ajaxurl' => admin_url('admin-ajax.php')));
         }
 
         if (is_product()) {
@@ -89,7 +92,6 @@ require 'inc/mytheme-hook.php';
 
 function register_my_menu()
 {
-
     register_nav_menu('left-menu', __('Left Menu', 'project'));
     register_nav_menu('right-menu', __('Rigth Menu', 'project'));
 }

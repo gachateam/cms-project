@@ -45,6 +45,5 @@ switch ($template) {
 		echo '<div id="primary" class="content-area twentysixteen"><main id="main" class="site-main" role="main">';
 		break;
 	default:
-		echo '<div class="container"><div id="primary" class="content-area" style="display: flex;justify-content: center;float:none;width: 100%;"><main id="main" class="site-main" role="main" style="width: 100%;">';
 		break;
 }
