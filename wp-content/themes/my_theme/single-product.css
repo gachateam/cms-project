@@ -384,3 +384,7 @@ li {
 .related.products .disabled {
   display: block;
 }
+
+.single-product div.product .woocommerce-product-gallery img {
+  width: 100%;
+}
