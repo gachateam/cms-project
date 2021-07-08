@@ -6,7 +6,7 @@ global $product;
     $image = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'single-post-thumbnail');
     ?>
     <div class="product-block-inner">
-        <div class="image-block">
+        <div class="image-block overflow-hidden">
             <a href="<?php echo $product->get_permalink() ?>">
                 <?php
                 $link = $image[0] ?? get_template_directory_uri() . '/img/default-thumbnail.jpg';
