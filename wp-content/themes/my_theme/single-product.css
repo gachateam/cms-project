@@ -350,35 +350,12 @@ li {
   opacity: 1;
 }
 
-.nav-button {
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: white;
-  border-radius: 50%;
-  transition: all 0.5s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-}
-
 .related.products:hover .nav-button {
   opacity: 1;
 }
 
 .nav-button:hover {
   color: #b2b2b2;
-}
-
-.owl-prev {
-  left: -10px;
-}
-
-.owl-next {
-  right: -10px;
 }
 
 .related.products .disabled {
