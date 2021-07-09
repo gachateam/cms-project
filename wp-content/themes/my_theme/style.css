@@ -724,3 +724,34 @@ ul li .product-block-inner .image2 {
 .page-title{
     text-align: center;
 }
+
+.woocommerce-pagination{
+  width: 100%;
+  text-align: center;
+}
+
+.woocommerce .woocommerce-pagination ul.page-numbers li{
+  display: inline-block;
+}
+
+.woocommerce-pagination span, .woocommerce-pagination a {
+  margin: 0;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 400;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  display: block;
+  border: 1px solid #e5e5e5;
+}
+
+.woocommerce-pagination span.current{
+  background: black;
+  color: #fff;
+}
+
+.woocommerce-pagination a:hover {
+  background: black;
+  color: #fff;
+}
